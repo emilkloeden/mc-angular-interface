@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mc_angular_interface"
+authors = [
+    {name = "Emil Kloeden", email = "emilkloeden@gmail.com"},
+]
+description = "A plugin for generating an angular material data table component from a single entity in a data model."
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = []
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "jsonschema==4.19.0",
+    "types-jsonschema==4.17.0.10",
+    "model-codegen @ git+https://github.com/emilkloeden/model-codegen.git",
+]
+dynamic = ["version"]
+
+[project.entry-points."model_codegen.plugins"]
+angular-interface = "mc_angular_interface"
